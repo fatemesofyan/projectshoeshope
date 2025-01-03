@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../public/style/output.css" />
+  </head>
+  <style>
+   input[type="radio"] {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      appearance: none; 
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+      position: relative;
+    }
+
+    input[type="radio"]:checked {
+      background-color: white; 
+      border-color: black; 
+      border: 2px solid;
+    }
+
+    input[type="radio"]:checked::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: black; 
+      display: block;
+      margin: 4px; 
+      position: absolute; 
+      top: 30%; 
+      left: 30%; 
+      right: 40%;
+      bottom: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <body>
+  <div class="bg-gray-100 h-screen">
+
+    <div class="flex flex-row pt-10 pl-4 gap-3">
+        <img src="../../../public/assets/img/arrow-left-short.png" alt="arrow" />
+        <h3 class="font-bold text-2xl text-[#152536]">Shipping Address</h3>
+      </div>
+      <div class="w-full flex flex-col gap-5 pt-14 pl-5 pr-5">
+        <div class="flex flex-row justify-between  gap-14 rounded-3xl bg-white p-3">
+          <div class="flex flex-row justify-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-geo-alt-fill w-10 h-10"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+              />
+            </svg>
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">Home</h1>
+              <p class="text-gray-400">Lorem ipsum dolor sit </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio"    class=""/>
+            <label for="radio"></label>
+          </div>
+        </div>
+        <div class="flex flex-row justify-between gap-14 rounded-3xl bg-white p-3">
+          <div class="flex flex-row justify-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-geo-alt-fill w-10 h-10"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+              />
+            </svg>
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">Office</h1>
+              <p class="text-gray-400">Lorem ipsum dolor sit </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio" />
+            <label for="radio"></label>
+          </div>
+        </div>
+        <div class="flex flex-row justify-between gap-14 rounded-3xl bg-white p-3">
+          <div class="flex flex-row justify-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-geo-alt-fill w-10 h-10"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+              />
+            </svg>
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">Apartment</h1>
+              <p class="text-gray-400">Lorem ipsum dolor sit </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio" />
+            <label for="radio"></label>
+          </div>
+        </div>
+        <div class="flex flex-row justify-between gap-14 rounded-3xl bg-white p-3">
+          <div class="flex flex-row justify-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-geo-alt-fill w-10 h-10"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+              />
+            </svg>
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">Parent's House</h1>
+              <p class="text-gray-400">Lorem ipsum dolor sit </p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio" />
+            <label for="radio"></label>
+          </div>
+        </div>
+        
+      </div>
+  
+      <div class="pl-5 pr-5">
+          <button
+            type="submit"
+            class="bg-gray-400 rounded-3xl text-black w-full h-12 mt-20 mb-5"
+          >
+            Add New Address
+          </button>
+        </div>
+  
+      <div class="pl-5 pr-5">
+        <button
+          type="submit"
+          class="bg-slate-950 rounded-3xl text-white w-full h-12 mt-40 mb-5"
+        >
+          Apply
+        </button>
+      </div>
+
+  </div>
+  </body>
+</html>

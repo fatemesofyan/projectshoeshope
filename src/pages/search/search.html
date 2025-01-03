@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../public/style/output.css" />
+  </head>
+  <style>
+    .search-container {
+      width: 100%;
+      margin-top: 30px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+    }
+    .search-container:focus-within {
+      border-color: black;
+    }
+  </style>
+  <body>
+    <!-- <div class="search-container"> -->
+      <div class="flex pt-10 p-5">
+        <button
+          type="submit"
+          class="p-2 bg-[#ECECEC] text-white rounded-l-md border-none focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-search text-black w-6 h-6"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+            />
+          </svg>
+        </button>
+        <input
+          type="text"
+          placeholder="search"
+          class="w-full p-4 pl-6 pr-2 bg-[#ECECEC] border-none text-sm text-black focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="p-2 bg-[#ECECEC] text-white rounded-r-md border-none focus:outline-none"
+        >
+          <img src="../../../public/assets/img/Filter 5.svg" alt="Filter" />
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-row justify-between pr-8 pl-6 pt-8 pb-3">
+      <button class="text-[#152536] font-bold text-xl">Recent</button>
+      <button class="text-[#152536] font-bold text-xl">Clear All</button>
+    </div>
+    <hr class="m-6 ">
+    <div class="flex flex-row justify-between pr-8 pl-6 pt-5 ">
+      <h3 class="text-gray-500">Nike Wrapshot classic</h3>
+      <button><img src="../../../public/assets/img/Close Square.svg" alt="Close"></button>
+    </div>
+  </body>
+</html>

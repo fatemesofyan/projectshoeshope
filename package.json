@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/input.css -o ./public/style/output.css --watch"
+  },
+  "dependencies": {
+    "tailwind-scrollbar-hide": "^2.0.0"
+  }
+}

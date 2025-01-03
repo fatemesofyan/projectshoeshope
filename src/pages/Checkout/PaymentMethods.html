@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../public/style/output.css" />
+  </head>
+  <style>
+    input[type="radio"] {
+      width: 24px;
+      height: 24px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      appearance: none; 
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+      position: relative;
+    }
+
+    input[type="radio"]:checked {
+      background-color: white; 
+      border-color: black; 
+      border: 2px solid;
+    }
+
+    input[type="radio"]:checked::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: black; 
+      display: block;
+      margin: 4px; 
+      position: absolute; 
+      top: 30%; 
+      left: 30%; 
+      right: 40%;
+      bottom: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <body>
+    <div class="bg-gray-100 h-screen ">
+      <div class="flex flex-row justify-between pt-10 pr-4 ">
+        <div class="flex flex-row  pt-10 pl-4 gap-3">
+          <img
+          src="../../../public/assets/img/arrow-left-short.png"
+          alt="arrow"
+        />
+        <h3 class="font-bold text-2xl text-[#152536]">Payment Methods</h3>
+        </div>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle w-8 h-8 mt-10" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+        </svg>
+      </div>
+
+      <div>
+        <p class="text-gray-500 pl-6 pt-10">Select the payment method you want to use.</p>
+      </div>
+
+      <div class="w-full flex flex-col gap-5 pt-14 pl-5 pr-5">
+        <div
+          class="flex flex-row justify-between gap-14 rounded-3xl bg-white p-4"
+        >
+          <div class="flex flex-row justify-center gap-3">
+            <img
+              src="../../../public/assets/img/—Pngtree—vector wallet icon_3989626.png"
+              alt="wallet"
+              class="w-10 h-10"
+            />
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">My Wallet</h1>
+              
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio" class="" />
+            <label for="radio"></label>
+          </div>
+        </div>
+        <div
+          class="flex flex-row justify-between gap-14 rounded-3xl bg-white p-4"
+        >
+          <div class="flex flex-row justify-center gap-3">
+            <img
+              src="../../../public/assets/img/paypal-svgrepo-com.svg"
+              alt="paypal"
+              class="w-10 h-10"
+            />
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">PayPal</h1>
+             
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio" />
+            <label for="radio"></label>
+          </div>
+        </div>
+        <div
+          class="flex flex-row justify-between gap-14 rounded-3xl bg-white p-4"
+        >
+          <div class="flex flex-row justify-center gap-3">
+            <img
+              src="../../../public/assets/img/google-icon-logo-svgrepo-com (1).svg"
+              alt="google"
+              class="w-8 h-8"
+            />
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">Google Pay</h1>
+              
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio" />
+            <label for="radio"></label>
+          </div>
+        </div>
+        <div
+          class="flex flex-row justify-between gap-14 rounded-3xl bg-white p-4"
+        >
+          <div class="flex flex-row justify-center gap-3">
+            <img
+              src="../../../public/assets/img/icons8-apple-100.png"
+              alt="apple"
+              class="w-10 h-10"
+            />
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">Apple Pay</h1>
+             
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio" />
+            <label for="radio"></label>
+          </div>
+        </div>
+        <div
+          class="flex flex-row justify-between gap-14 rounded-3xl bg-white p-4"
+        >
+          <div class="flex flex-row justify-center gap-3">
+            <img
+              src="../../../public/assets/img/mastercard.svg"
+              alt="mastercard"
+              class="w-10 h-10"
+            />
+            <div class="flex flex-col">
+              <h1 class="font-bold text-xl text-[#152536]">... ... ... ... 4679</h1>
+              
+            </div>
+          </div>
+          <div class="flex items-center">
+            <input type="radio" name="test" id="radio" />
+            <label for="radio"></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-5 pr-5 pt-2">
+        <button
+          type="submit"
+          class="bg-slate-950 rounded-3xl text-white w-full h-12 mt-40 mb-5"
+        >
+        Confirm Payment
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

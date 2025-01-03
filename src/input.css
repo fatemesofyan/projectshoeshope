@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @font-face {
+    font-family: 'inter';
+    src: url('/public/assets/Font/inter/InterDisplay-SemiBold.otf') format('woff2'),
+         url('/public/assets/Font/inter/InterDisplay-Regular.otf') format('woff'),
+         url('/public/assets/Font/inter/Inter-Bold.otf') format('woff');
+
+    font-weight: normal;
+    font-style: normal;
+  } */
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  appearance: none; 
+  border: 2px solid #ccc; 
+  border-radius: 4px; 
+  position: relative; 
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(0, 0, 0); 
+  border-color: rgb(0, 0, 0); 
+}
+
+input[type="checkbox"]:checked::before {
+  content: "\2713"; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  color: rgb(255, 255, 255); 
+  font-size: 16px; 
+}
+
+
+label {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-container {
+  position: relative;
+  width: 300px; 
+}
+
+.email-input {
+  width: 100%;
+  padding-left: 30px; 
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding-right: 10px;
+  background-color: #fff;
+  font-size: 16px;
+  background-image: url("../public/assets/img/input-prefix.png");
+}
+
+
+.email-input::before {
+  content: "";
+  position: absolute;
+  left: 10px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; 
+  height: 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.email-input::placeholder {
+  color: #888;
+}
+

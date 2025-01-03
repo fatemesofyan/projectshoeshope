@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <link rel="stylesheet" href="../../../public/style/output.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    .swiper {
+      width: 428px;
+      height: 926px;
+    }
+    .swiper-slide {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .swiper-pagination-bullet {
+      width: 40px;
+      height: 4px;
+      background: rgba(107, 104, 104, 0.2);
+      opacity: 1;
+      border-radius: 0;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: rgb(70, 69, 69);
+    }
+    .swiper-pagination {
+      bottom: 140px !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="flex flex-col justify-center items-center content-center min-h-screen">
+          <img src="../../../public/assets/img/started/shoe-1.png" alt="shoe-1" class="w-[428px] h-[643px]" />
+          <h3 class="text-3xl font-semibold mt-4 ml-4 mr-4 text-center" style="max-width: 350px; line-height: 1.5; word-break: break-word;">
+            Let’s fulfill your fashion needs with shoearight now!
+          </h3>
+          <button type="button" class="bg-[#212529] rounded-3xl text-white w-96 h-12 mt-28 next-btn">
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="flex flex-col justify-center items-center content-center min-h-screen text-center">
+          <img src="../../../public/assets/img/started/shoe-2.png" alt="shoe-1" class="w-[428px] h-[643px]" />
+          <h3 class="text-3xl font-semibold mt-4 ml-4 mr-4 text-center" style="max-width: 350px; line-height: 1.5; word-break: break-word;">
+            Your satisfaction is our number one priority
+          </h3>
+          <button type="button" class="bg-[#212529] rounded-3xl text-white w-96 h-12 mt-28 next-btn">
+            Next
+          </button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="flex flex-col justify-center items-center content-center min-h-screen text-center">
+          <img src="../../../public/assets/img/started/shoe-3.png" alt="shoe-1" class="w-[428px] h-[643px]" />
+          <h3 class="text-3xl font-semibold mt-4">
+            We provide high quality products just for you
+          </h3>
+          <button type="button" class="bg-[#212529] rounded-3xl text-white w-96 h-12 mt-28 next-btn">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+
+    let swiper = new Swiper('.swiper', {
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      initialSlide: 0,
+    });
+
+    const nextButtons = document.querySelectorAll('.next-btn');
+    nextButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        swiper.slideNext();
+      });
+    });
+
+  </script>
+</body>
+</html>
