@@ -6,6 +6,7 @@
     "build": "npx tailwindcss -i ./src/input.css -o ./public/style/output.css --watch"
   },
   "dependencies": {
+    "sweetalert2": "^11.15.9",
     "tailwind-scrollbar-hide": "^2.0.0"
   }
 }

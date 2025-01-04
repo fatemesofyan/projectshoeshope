@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="../../../public/style/output.css" />
   </head>
   <style>
+    html,body{
+overflow-y: hidden;
+    }
     swiper-container {
       width: 100%;
       height: 100%;
@@ -56,8 +59,28 @@
       stroke-dasharray: 125.6;
       transform: rotate(-90deg);
     }
+
+    
+.transition-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 9999;
+  transform: translateY(100%);
+  transition: transform 1s ease-out; 
+}
+
+.transition-container.transition-active {
+  transform: translateY(0);
+}
   </style>
   <body>
+
+    <div class="transition-container"></div>
+    
     <swiper-container
       class="mySwiper"
       space-between="30"
@@ -66,10 +89,10 @@
       autoplay-disable-on-interaction="false"
       style="width: 428px; height: 926px"
     >
-      <swiper-slide>
-        <div class="flex flex-col justify-center items-center content-center">
+      <swiper-slide class=" w-full h-screen flex flex-col justify-center items-center content-center gap-52">
+        <div>
           <div
-            class="w-56 h-16 pr-24 pb-96 pl-24 flex justify-center content-center items-center gap-5"
+            class="w-full mb-20 mt-40 flex justify-center content-center items-center gap-5"
           >
             <img
               src="../../../public/assets/img/ondoarding icon.png"
@@ -78,7 +101,7 @@
             />
             <h2 class="text-[#152536] font-bold text-5xl">Shoea</h2>
           </div>
-          <div class="pb-24 pl-48 pr-48">
+          <div class="w-full pt-44 flex justify-center content-center items-center ">
             <div role="status">
               <svg
                 aria-hidden="true"
@@ -101,14 +124,14 @@
           </div>
         </div>
       </swiper-slide>
-      <swiper-slide
-        ><img
+      <swiper-slide >
+        <img
           src="../../../public/assets/img/Wallpaper-page2.png"
           alt="Wallpaper"
           class="relative w-full h-full"
         />
-        <div class="absolute">
-          <div class="flex ml-5 mt-96 gap-3">
+        <div class="absolute mt-96">
+          <div class="flex ml-5 mt-20  gap-3">
             <h2 class="font-semibold text-4xl text-white">Welcome to</h2>
             <img
               src="../../../public/assets/img/👋.png"

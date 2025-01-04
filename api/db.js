@@ -627,8 +627,10 @@ const products = [
 ];
 const BASE_URL = "http://api.alikooshesh.ir:3000";
 const CREATE_PRODUCT_URL = `${BASE_URL}/api/records/products`;
-const api_key = "sofyan-124vI2u1r02UwcikLJfh0F5OG9djlFTVnAbXWhvk8eMJyTWv1qzzhXNWcBQDGxkCxZaT873yJD4sIkbhQ9qArAN7HiHtgm0juQDxpko2UEDiknGyG0qJYi1uh";
-const accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Nzc4YmMzNjNiMzdkZTcwNGEyNDg3NyIsImlhdCI6MTczNTg4NzgxMSwiZXhwIjoxNzM2MDYwNjExfQ.18oQ-sPs7Tb1myBMiePnmkMdICoVEaORD97IUUQfW_k";
+const api_key =
+  "sofyan-124D0Wxgxrzb4clJ6OJAguR83UwqiXvtlBNvQht1ZxPjtY1NUqA7rpEoyja7yDoOWjPEm07WnuzMsa0jGNpyKoXBLRNDvAObXHXfQ70g1eyeu0Gx4Vefq57K3";
+const accessToken =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNTk4Njc3OSwiZXhwIjoxNzM2MTU5NTc5fQ.y1q48WQim6vmVvGNYlzDuiII6E8uuoZ_R8Cs4pKgKnU";
 
 async function createProducts(productsArray) {
   for (const product of productsArray) {

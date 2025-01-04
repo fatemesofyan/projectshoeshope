@@ -6,57 +6,219 @@
     <title>Document</title>
     <link rel="stylesheet" href="../../../public/style/output.css" />
   </head>
+<style>
+
+
+.loader-backdrop {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background: rgba(51, 51, 51, 0.6); 
+  z-index: 9999; 
+  display: flex; 
+  align-items: center;    
+  justify-content: center; 
+}
+
+.loader {
+  display: flex;    
+  align-items: center; 
+  justify-content: center; 
+  flex-direction: row; 
+}
+
+.bar {
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.8); 
+  border-radius: 10px; 
+  animation: scale-up4 1s linear infinite; 
+}
+
+.bar:nth-child(2) {
+  height: 45px;
+  margin: 0 5px;
+  animation-delay: 0.25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.5s; 
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #fff;
+    transform: scaleY(2.5); 
+  }
+  40% {
+    transform: scaleY(2); 
+  }
+}
+
+.hidden {
+      display: none;
+    }
+
+</style>
   <body>
-<div class=" flex justify-center">
-  <div class="flex justify-start content-start items-start mt-5 ">
-    <img src="../../../public/assets/img/arrow-left-short.png" alt="arrow-left" />
-
-    </div>
-
-    <div class="flex flex-col justify-center items-center content-center gap-4">
-      
-
-      <img src="../../../public/assets/img/logo/login-icon.png" alt="logo" class="mt-20 mb-20"/>
-      <h3 class="font-semibold text-3xl mb-3">Login to Your Account</h3>
-      <div class="flex w-full">
-        <button type="submit" class="p-2 bg-[#dbceeb86] text-white rounded-l-md border-none focus:outline-none">
-          <img src="../../../public/assets/img/input-prefix (4).png" alt="mail">
-        </button>
-        <input
-        type="email"
-        placeholder="Email"
-        class="w-full pl-6 pr-2 bg-[#dbceeb86] border-none rounded-r-md text-sm text-black  focus:outline-none p-2"
+    <div class="flex ml-8 mt-10">
+      <img
+        src="../../../public/assets/img/arrow-left-short.png"
+        alt="arrow-left"
+        id="back-arrow" 
       />
-      </div>
-    <div class="flex w-full">
-      <button type="submit" class="p-2 bg-[#dbceeb86] text-black rounded-l-md border-none focus:outline-none">
-        <img src="../../../public/assets/img/input-prefix.png" alt="lock">
-      </button>
-      <input
-      type="password"
-      placeholder="Password"
-      class="w-full pl-6 pr-2 bg-[#dbceeb86] border-none text-sm text-black  focus:outline-none p-2 "
-    />
-    <button type="submit" class="p-2 bg-[#dbceeb86] text-black rounded-r-md border-none focus:outline-none">
-      <img src="../../../public/assets/img/eye-slash-fill.png" alt="lock">
-    </button>
     </div>
-    
-      <div class="flex gap-3 mt-5">
-        <input type="checkbox" name="remember" id="remember" class="checkbox" />
-        <label for="remember" >Remember me</label>
-      </div>
-    
-      <button
-        type="submit"
-        class="bg-slate-950 rounded-3xl text-white w-80 h-12 mt-40 mb-5"
-      >
-        Sing in
-      </button>
-    </div>
+<!-- is loading -->
+<div
+class="hidden loader-backdrop"
+id="loading-backdrop"
+>
+<div class="loader" id="loading-spinner">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
 </div>
+</div>
+
+ 
     
 
     
+
+
+    <div class="flex justify-center">
+      <div
+        class="flex flex-col justify-center items-center content-center gap-4"
+      >
+        <img
+          src="../../../public/assets/img/logo/login-icon.png"
+          alt="logo"
+          class="mt-20 mb-20"
+        />
+        <h3 class="font-semibold text-3xl mb-3">Login to Your Account</h3>
+        
+        <!-- Email Input -->
+        <div class="w-full border-[3px] border-transparent rounded-md focus-within:border-black">
+          <div class="flex w-full">
+            <button
+              type="submit"
+              id="emailButton"
+              class="p-2 bg-[#FAFAFA] text-white rounded-l-md border-none focus:outline-none opacity-50 transition-opacity duration-200"
+            >
+              <img
+                src="../../../public/assets/img/mail.png"
+                alt="mail"
+                class="w-5 h-5"
+              />
+            </button>
+            <input
+              id="emailInput"
+              type="email"
+              placeholder="Email"
+              class="w-full pl-6 pr-2 bg-[#FAFAFA] border-none rounded-r-md text-sm text-black focus:outline-none  p-2"
+              oninput="handleInput('emailButton', 'submitButton')"
+            />
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="w-full border-[3px] border-transparent rounded-md focus-within:border-black">
+          <div class="flex w-full">
+            <button
+              type="submit"
+              id="passwordButton"
+              class="p-2 bg-[#FAFAFA] text-black rounded-l-md border-none focus:outline-none opacity-50 transition-opacity duration-200"
+            >
+              <img
+                src="../../../public/assets/img/lock.png"
+                alt="lock"
+                class="w-5 h-5"
+              />
+            </button>
+            <input
+              id="passwordInput"
+              type="password"
+              placeholder="Password"
+              class="w-full pl-6 pr-2 bg-[#FAFAFA] border-none text-sm text-black focus:outline-none  p-2"
+              oninput="handleInput('passwordButton', 'submitButton')"
+            />
+            <button
+              type="button"
+              id="eyeButton"
+              class="p-2 bg-[#FAFAFA] text-black rounded-r-md border-none focus:outline-none opacity-50 transition-opacity duration-200"
+              onclick="togglePasswordVisibility()"
+            >
+              <img
+                id="eyeIcon"
+                src="../../../public/assets/img/eye-slash-fill.png"
+                alt="eye"
+                class="w-5 h-5"
+              />
+            </button>
+          </div>
+        </div>
+
+        <div class="flex gap-3 mt-5">
+          <input type="checkbox" name="remember" id="remember" class="checkbox" />
+          <label for="remember">Remember me</label>
+        </div>
+
+        <button
+        onclick="login()"
+          id="submitButton"
+          class="bg-slate-950 rounded-3xl text-white w-80 h-12 mt-40 mb-5 opacity-50 transition-opacity duration-200"
+          disabled
+        >
+          Sign in
+        </button>
+      </div>
+    </div>
+
+    <script src="./loginscript.js" type="module"></script>
+    <script>
+      // Function to handle input changes and button opacity
+      function handleInput(buttonId, submitId) {
+        const emailInput = document.getElementById("emailInput");
+        const passwordInput = document.getElementById("passwordInput");
+        const emailButton = document.getElementById("emailButton");
+        const passwordButton = document.getElementById("passwordButton");
+        const eyeButton = document.getElementById("eyeButton");
+        const submitButton = document.getElementById(submitId);
+
+        const emailFilled = emailInput.value.trim().length > 0;
+        const passwordFilled = passwordInput.value.trim().length > 0;
+
+        // Toggle button opacity
+        emailButton.style.opacity = emailFilled ? "1" : "0.5";
+        passwordButton.style.opacity = passwordFilled ? "1" : "0.5";
+        eyeButton.style.opacity = passwordFilled ? "1" : "0.5";
+
+        // Toggle submit button state
+        if (emailFilled && passwordFilled) {
+          submitButton.style.opacity = "1";
+          submitButton.disabled = false;
+        } else {
+          submitButton.style.opacity = "0.5";
+          submitButton.disabled = true;
+        }
+      }
+
+      // Function to toggle password visibility
+      function togglePasswordVisibility() {
+        const passwordInput = document.getElementById("passwordInput");
+        const eyeIcon = document.getElementById("eyeIcon");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text"; // Show the password
+          eyeIcon.src = "../../../public/assets/img/Show.svg"; // Change the icon
+        } else {
+          passwordInput.type = "password"; // Hide the password
+          eyeIcon.src = "../../../public/assets/img/eye-slash-fill.png"; // Change the icon back
+        }
+      }
+    </script>
   </body>
 </html>
