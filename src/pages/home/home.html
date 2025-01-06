@@ -15,11 +15,11 @@
         <img
           src="../../../public/assets/img/profile.png"
           alt="profile"
-          class="w-6 h-6"
+          class="w-8 h-8"
         />
 
         <div class="flex flex-col">
-          <h6 class="text-[#757475] text-xs flex">
+          <h6 class="text-[#757475] text-base flex">
             Good Morning
             <img
               src="../../../public/assets/img/👋.png"
@@ -27,7 +27,7 @@
               class="w-4 h-4"
             />
           </h6>
-          <h2 class="font-bold text-xs">Fateme sofyan</h2>
+          <h2 class="font-bold text-base">Fateme sofyan</h2>
         </div>
       </div>
       <div class="flex gap-3 pr-4 pt-3">
@@ -44,7 +44,7 @@
       </div>
     </header>
 
-    <div class="flex p-5 pt-20">
+    <div class="flex p-5 pt-24">
       <button
         type="submit"
         class="p-2 bg-[#ECECEC] text-white rounded-l-md border-none focus:outline-none"
@@ -58,50 +58,50 @@
       />
     </div>
 
-    <div class="w-full grid grid-cols-4 gap-5 justify-items-center">
-      <button>
+    <div  class="w-full grid grid-cols-4 gap-5 justify-items-center">
+      <button  id="nike-button">
         <img
           src="../../../public/assets/img/company/company (1).png"
           alt="nike"
         />
       </button>
-      <button>
+      <button id="adidas-button">
         <img
           src="../../../public/assets/img/company/company (2).png"
           alt="adidas"
         />
       </button>
-      <button>
+      <button id="puma-button">
         <img
           src="../../../public/assets/img/company/company (3).png"
           alt="puma"
         />
       </button>
-      <button>
+      <button id="asics-button">
         <img
           src="../../../public/assets/img/company/company (4).png"
           alt="asics"
         />
       </button>
-      <button>
+      <button id="reebok-button">
         <img
           src="../../../public/assets/img/company/company (5).png"
           alt="reebok"
         />
       </button>
-      <button>
+      <button id="newba-button">
         <img
           src="../../../public/assets/img/company/company (6).png"
           alt="newba"
         />
       </button>
-      <button>
+      <button id="converse-button">
         <img
           src="../../../public/assets/img/company/company (7).png"
           alt="converse"
         />
       </button>
-      <button>
+      <button id="more-button">
         <img
           src="../../../public/assets/img/company/company (8).png"
           alt="more"
@@ -110,55 +110,56 @@
     </div>
 
     <div class="flex flex-row justify-between p-4">
-      <button class="text-[#343A40] font-bold text-base">See All</button>
-      <button class="text-[#343A40] font-bold text-base">Most Popular</button>
+      <h3 class="text-[#343A40] font-bold text-lg">Most Popular</h3>
+      <button id="See-all" class="text-[#343A40] font-bold text-base">See All</button>
     </div>
 
     <div class="overflow-x-scroll flex gap-4 whitespace-nowrap p-4 scrollbar-hide">
-      <button
+      <button  id="all-products-btn"
         class="border-2 border-solid border-[#343A40] text-[#343A40] rounded-2xl p-1 pr-3 pl-3 font-bold text-base hover:bg-[#343A40] hover:text-white"
       >
         All
       </button>
-      <button
+      <button id="nike-products-btn"
         class="border-2 border-solid border-[#343A40] text-[#343A40] rounded-2xl p-1 pr-3 pl-3 font-bold text-base hover:bg-[#343A40] hover:text-white"
       >
         Nike
       </button>
-      <button
+      <button id="adidas-products-btn"
         class="border-2 border-solid border-[#343A40] text-[#343A40] rounded-2xl p-1 pr-3 pl-3 font-bold text-base hover:bg-[#343A40] hover:text-white"
       >
         Adidas
       </button>
-      <button
+      <button id="puma-products-btn"
         class="border-2 border-solid border-[#343A40] text-[#343A40] rounded-2xl p-1 pr-3 pl-3 font-bold text-base hover:bg-[#343A40] hover:text-white"
       >
         Puma
       </button>
-      <button
+      <button id="asics-products-btn"
         class="border-2 border-solid border-[#343A40] text-[#343A40] rounded-2xl p-1 pr-3 pl-3 font-bold text-base hover:bg-[#343A40] hover:text-white"
       >
         Asics
       </button>
-      <button
+      <button id="reebok-products-btn"
         class="border-2 border-solid border-[#343A40] text-[#343A40] rounded-2xl p-1 pr-3 pl-3 font-bold text-base hover:bg-[#343A40] hover:text-white"
       >
         Reebok
       </button>
-      <button
+      <button id="newba-products-btn"
         class="border-2 border-solid border-[#343A40] text-[#343A40] rounded-2xl p-1 pr-3 pl-3 font-bold text-base hover:bg-[#343A40] hover:text-white"
       >
         New Ba..
       </button>
-      <button
+      <button id="onverse-products-btn"
         class="border-2 border-solid border-[#343A40] text-[#343A40] rounded-2xl p-1 pr-3 pl-3 font-bold text-base hover:bg-[#343A40] hover:text-white"
       >
         onverse
       </button>
     </div>
-
-    <div class="grid grid-cols-2 p-2 overflow-y-scroll scrollbar-hide h-screen">
-      <div>
+<!-- containor products -->
+    <div id="products" class="grid grid-cols-2 p-2 overflow-y-scroll scrollbar-hide h-screen">
+     
+      <!-- <div>
         <img
           src="../../../public/assets/img/shoes/puma/puma1.jpg"
           alt="puma"
@@ -175,53 +176,54 @@
         />
         <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
         <p>$ 85.00</p>
-      </div>
-      <div>
-        <img
-          src="../../../public/assets/img/shoes/puma/puma1.jpg"
-          alt="puma"
-          class="w-48 h-48 rounded-2xl"
-        />
-        <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-        <p>$ 85.00</p>
-      </div>
-      <div>
-        <img
-          src="../../../public/assets/img/shoes/puma/puma1.jpg"
-          alt="puma"
-          class="w-48 h-48 rounded-2xl"
-        />
-        <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-        <p>$ 85.00</p>
-      </div>
-      <div>
-        <img
-          src="../../../public/assets/img/shoes/puma/puma1.jpg"
-          alt="puma"
-          class="w-48 h-48 rounded-2xl"
-        />
-        <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-        <p>$ 85.00</p>
-      </div>
-      <div>
-        <img
-          src="../../../public/assets/img/shoes/puma/puma1.jpg"
-          alt="puma"
-          class="w-48 h-48 rounded-2xl"
-        />
-        <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-        <p>$ 85.00</p>
-      </div>
+      </div> -->
+      
     </div>
 
     <footer
-      class="w-full flex justify-center gap-12 fixed bottom-0 bg-white p-4"
+    class="flex flex-col justify-around fixed z-50 w-full h-16 bottom-0 bg-white shadow-2xl"
     >
-      <img src="../../../public/assets/img/action Bar/Group 1 (1).png" alt="" />
-      <img src="../../../public/assets/img/action Bar/Group 2 (1).png" alt="" />
-      <img src="../../../public/assets/img/action Bar/Group 3.png" alt="" />
-      <img src="../../../public/assets/img/action Bar/Group 4.png" alt="" />
-      <img src="../../../public/assets/img/action Bar/Group 5.png" alt="" />
+    <div
+    
+  >
+    <div class="flex flex-row justify-around">
+      <button
+      class="flex flex-col items-center group"
+      onclick="changeImageAndRedirect(this)"
+    >
+      <img
+        src="../../../public/assets/img/action Bar/images/house-door-fill.svg"
+        alt="home"
+        class="w-8 h-8"
+      >
+      <span>Home</span>
+    </button>
+      
+
+      <button class="flex flex-col" onclick="changeCart(this)">
+        <!-- <img src="../../../public/assets/img/action Bar/images/handbag-fill.svg" alt="handbag"> -->
+        <img src="../../../public/assets/img/action Bar/images/handbag.svg" alt="handbag" class="w-8 h-8"> 
+        <span>Cart</span>
+      </button>
+      <button class="flex flex-col" onclick="changeCartImage(this)">
+        <img src="../../../public/assets/img/action Bar/images/cart2.svg" alt="order" class="w-8 h-8">
+        
+        <span>Orders</span>
+      </button>
+      <button class="flex flex-col">
+        <img src="../../../public/assets/img/action Bar/images/wallet.svg" alt="wallet" class="w-8 h-8">
+        <!-- <img src="../../../public/assets/img/action Bar/images/wallet-fill.svg" alt="wallet" > -->
+        <span>Wallet</span>
+      </button>
+      <button class="flex flex-col">
+        <img src="../../../public/assets/img/action Bar/images/person.svg" alt="Profile" class="w-8 h-8" >
+        <!-- <img src="../../../public/assets/img/action Bar/images/person-fill.svg" alt="Profile"> -->
+
+        <span>Profile</span>
+      </button>
+    </div>
+  </div>
     </footer>
+    <script src="./home.js"></script>
   </body>
 </html>
