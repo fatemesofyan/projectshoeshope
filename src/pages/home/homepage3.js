@@ -1,14 +1,12 @@
 const product = document.getElementById("products");
 
-
 const API_KEY =
   "sofyan-124D0Wxgxrzb4clJ6OJAguR83UwqiXvtlBNvQht1ZxPjtY1NUqA7rpEoyja7yDoOWjPEm07WnuzMsa0jGNpyKoXBLRNDvAObXHXfQ70g1eyeu0Gx4Vefq57K3";
 
 const API_BASE_URL = "http://api.alikooshesh.ir:3000";
 
 const ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjA3NjgyMywiZXhwIjoxNzM2MjQ5NjIzfQ.Et8_s2Tl9N5rkawkpr7XXK0wPDpHyJ_FpOEF8abyM9k";
-
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjI1MDczNiwiZXhwIjoxNzM2NDIzNTM2fQ.3oEeD9x7L5b5xwx28-kWmbSg3GNNWKw_D_G8XWSafbs";
 
   window.addEventListener("DOMContentLoaded", () => {
     const selectedBrand = localStorage.getItem("selectedBrand");
@@ -221,7 +219,7 @@ const ACCESS_TOKEN =
       .map((element) => {
         return `<a href="../home/homepagesingelprodact.html?id=${element.id}"><div>
           <img
-            src="${element.imageURL}"
+            src="${element.imageURL[0]}"
             alt="puma"
             class="w-48 h-48 rounded-2xl"
           />
@@ -239,11 +237,29 @@ const ACCESS_TOKEN =
         return `
           <a href="../home/homepagesingelprodact.html?id=${element.id}">
             <div>
-              <img src="${element.imageURL}" alt="${element.name}" class="w-48 h-48 rounded-2xl" />
+              <img src="${element.imageURL[0]}" alt="${element.name}" class="w-48 h-48 rounded-2xl" />
               <h3 class="text-[#152536] font-bold">${element.name}</h3>
               <p><span>$</span>${element.price}</p>
             </div>
           </a>`;
       })
       .join("");
+      
   }
+
+  
+
+  const backArrow = document.getElementById("back-arrow");
+const backdrop = document.getElementById("loading-backdrop");
+
+backArrow.addEventListener("click", () => {
+  backdrop.classList.remove("hidden");
+
+  setTimeout(() => {
+    window.location.href = "../home/home.html";
+  }, 2000); 
+
+  setTimeout(() => {
+    backdrop.classList.add("hidden");
+  }, 2500); 
+});

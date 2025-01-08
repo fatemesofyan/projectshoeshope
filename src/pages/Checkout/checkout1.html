@@ -74,62 +74,75 @@
       <div>
         <h3 class="font-bold text-xl text-[#152536] pl-6 pb-3">Order list</h3>
 
-        <div
-          class="pt-3 pl-5 pr-5 flex flex-col gap-3 overflow-y-scroll scrollbar-hide h-96"
+       
+
+          <div id="checkout-container" class="pl-5 pr-5 flex flex-col gap-5">
+            <div
+            class="flex flex-row gap-2 rounded-3xl w-full shadow-lg bg-white p-2 "
+          >
+            <div class="bg-[#F3F3F3] rounded-3xl w-24 p-2 ">
+              <img
+                src="../../../public/assets/img/shoes/Rectangle 7.png"
+                alt="puma"
+                class="w-16 h-16"
+              />
+            </div>
+            <div class="flex flex-col ">
+              <h2 class="text-[#152536] font-bold text-lg">
+                Running Sportwear
+              </h2>
+              <div class="flex flex-row gap-44">
+                <h3 class="text-[#152536] font-bold text-lg">$150.00</h3>
+<h4 class="rounded-full bg-[#F3F3F3] w-10 h-10 flex justify-center items-center  ">2</h4>
+
+              </div>
+            </div>
+          </div>
+          <div
+          class="flex flex-row gap-2 rounded-3xl w-full shadow-lg bg-white p-2 "
         >
-          <div
-            class="flex flex-row gap-4 rounded-3xl w-full shadow-lg bg-white p-5"
-          >
-            <div class="bg-[#F3F3F3] rounded-3xl w-28 p-3">
-              <img
-                src="../../../public/assets/img/shoes/Rectangle 7.png"
-                alt="puma"
-                class="w-20 h-20"
-              />
-            </div>
-            <div class="flex flex-col">
-              <h2 class="text-[#152536] font-bold text-lg">
-                Running Sportwear
-              </h2>
+          <div class="bg-[#F3F3F3] rounded-3xl w-24 p-2 ">
+            <img
+              src="../../../public/assets/img/shoes/Rectangle 7.png"
+              alt="puma"
+              class="w-16 h-16"
+            />
+          </div>
+          <div class="flex flex-col ">
+            <h2 class="text-[#152536] font-bold text-lg">
+              Running Sportwear
+            </h2>
+            <div class="flex flex-row gap-44">
               <h3 class="text-[#152536] font-bold text-lg">$150.00</h3>
+<h4 class="rounded-full bg-[#F3F3F3] w-10 h-10 flex justify-center items-center  ">2</h4>
+
             </div>
+          </div>
+        </div>
+        <div
+        class="flex flex-row gap-2 rounded-3xl w-full shadow-lg bg-white p-2 "
+      >
+        <div class="bg-[#F3F3F3] rounded-3xl w-24 p-2 ">
+          <img
+            src="../../../public/assets/img/shoes/Rectangle 7.png"
+            alt="puma"
+            class="w-16 h-16"
+          />
+        </div>
+        <div class="flex flex-col ">
+          <h2 class="text-[#152536] font-bold text-lg">
+            Running Sportwear
+          </h2>
+          <div class="flex flex-row gap-44">
+            <h3 class="text-[#152536] font-bold text-lg">$150.00</h3>
+<h4 class="rounded-full bg-[#F3F3F3] w-10 h-10 flex justify-center items-center  ">2</h4>
+
+          </div>
+        </div>
+      </div>
           </div>
 
-          <div
-            class="flex flex-row gap-4 rounded-3xl w-full shadow-lg bg-white p-5"
-          >
-            <div class="bg-[#F3F3F3] rounded-3xl w-28 p-3">
-              <img
-                src="../../../public/assets/img/shoes/Rectangle 7.png"
-                alt="puma"
-                class="w-20 h-20"
-              />
-            </div>
-            <div class="flex flex-col">
-              <h2 class="text-[#152536] font-bold text-lg">
-                Running Sportwear
-              </h2>
-              <h3 class="text-[#152536] font-bold text-lg">$150.00</h3>
-            </div>
-          </div>
-
-          <div
-            class="flex flex-row gap-4 rounded-3xl w-full shadow-lg bg-white p-5"
-          >
-            <div class="bg-[#F3F3F3] rounded-3xl w-28 p-3">
-              <img
-                src="../../../public/assets/img/shoes/Rectangle 7.png"
-                alt="puma"
-                class="w-20 h-20"
-              />
-            </div>
-            <div class="flex flex-col">
-              <h2 class="text-[#152536] font-bold text-lg">
-                Running Sportwear
-              </h2>
-              <h3 class="text-[#152536] font-bold text-lg">$150.00</h3>
-            </div>
-          </div>
+          
         </div>
 
         <hr class="m-6" />
@@ -207,8 +220,8 @@
             class="flex flex-col justify-between gap-10 rounded-3xl bg-white p-3 pl-5 pr-5"
           >
             <div class="w-full flex flex-row justify-between pt-5">
-              <h2 class="text-base text-[#152536]">Amount</h2>
-              <p class="text-base font-bold text-[#152536]">$585.00</p>
+              <h2  class="text-base text-[#152536]">Amount</h2>
+              <p  id="checkout-total" class="text-base font-bold text-[#152536]"></p>
             </div>
             <div class="w-full flex flex-row justify-between">
               <h2 class="text-base text-[#152536]">Shipping</h2>
@@ -223,7 +236,7 @@
         </div>
 
         <div class="pl-5 pr-5 pt-44">
-          <button
+          <button id="Payment"
             type="submit"
             class="bg-slate-950 rounded-3xl text-white w-full h-14 mt-40 mb-5"
           >
@@ -232,5 +245,7 @@
         </div>
       </div>
     </div>
+ <img src= alt="">
+    <script src="./checkout.js"></script>
   </body>
 </html>

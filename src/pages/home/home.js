@@ -19,6 +19,11 @@ const moreButton = document.getElementById("more-button");
 
 const SeeAllButton = document.getElementById("See-all");
 
+const searchInput=document.getElementById("searchInput");
+
+const likelist=document.getElementById("likelist");
+
+
 
 
 
@@ -29,7 +34,7 @@ const API_KEY =
 const API_BASE_URL = "http://api.alikooshesh.ir:3000";
 
 const ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjA3NjgyMywiZXhwIjoxNzM2MjQ5NjIzfQ.Et8_s2Tl9N5rkawkpr7XXK0wPDpHyJ_FpOEF8abyM9k";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjMyNTc3NCwiZXhwIjoxNzM2NDk4NTc0fQ.EQn1qizjiiu7VsLlLb2B0GdgBeJe8oVffpCqjGizMVs";
 
 
 
@@ -253,7 +258,7 @@ function renderProduct(product) {
     .map((element) => {
       return `<a href="../home/homepagesingelprodact.html?id=${element.id}"><div>
         <img
-          src="${element.imageURL}"
+          src="${element.imageURL[0]}"
           alt="puma"
           class="w-48 h-48 rounded-2xl"
         />
@@ -357,6 +362,14 @@ SeeAllButton.addEventListener("click",()=>{
 });
 
 
+searchInput.addEventListener("click",()=>{
+   window.location.href="../../pages/search/resultsearch.html"
+});
+
+
+likelist.addEventListener("click",()=>{
+  window.location.href="../home/wishlist.html" 
+})
 
 function changeCartImage(button) {
     
@@ -373,3 +386,7 @@ function changeCart(button) {
   imgElement.src = "../../../public/assets/img/action Bar/images/handbag-fill.svg";
   window.location.href = "../../pages/Cart/mycart.html";
 }
+
+
+
+

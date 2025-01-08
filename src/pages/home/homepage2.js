@@ -15,7 +15,7 @@ const API_KEY =
 const API_BASE_URL = "http://api.alikooshesh.ir:3000";
 
 const ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjA3NjgyMywiZXhwIjoxNzM2MjQ5NjIzfQ.Et8_s2Tl9N5rkawkpr7XXK0wPDpHyJ_FpOEF8abyM9k";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjI1MDczNiwiZXhwIjoxNzM2NDIzNTM2fQ.3oEeD9x7L5b5xwx28-kWmbSg3GNNWKw_D_G8XWSafbs";
 
 
 
@@ -238,7 +238,7 @@ const ACCESS_TOKEN =
       .map((element) => {
         return `<a href="../home/homepagesingelprodact.html?id=${element.id}"><div>
           <img
-            src="${element.imageURL}"
+            src="${element.imageURL[0]}"
             alt="puma"
             class="w-48 h-48 rounded-2xl"
           />
@@ -283,3 +283,19 @@ const ACCESS_TOKEN =
   });
   
   getproductList();
+
+
+  const backArrow = document.getElementById("back-arrow");
+  const backdrop = document.getElementById("loading-backdrop");
+  
+  backArrow.addEventListener("click", () => {
+    backdrop.classList.remove("hidden");
+  
+    setTimeout(() => {
+      window.location.href = "../home/home.html";
+    }, 2000); 
+  
+    setTimeout(() => {
+      backdrop.classList.add("hidden");
+    }, 2500); 
+  });

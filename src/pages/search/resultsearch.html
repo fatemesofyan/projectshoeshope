@@ -12,6 +12,7 @@
         <button
           type="submit"
           class="p-2 bg-[#ECECEC] text-white rounded-l-md border-none focus:outline-none"
+          id="searchBtn"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +28,7 @@
           </svg>
         </button>
         <input
+        id="searchInput"
           type="text"
           placeholder="search"
           class="w-full p-4 pl-6 pr-2 bg-[#ECECEC] border-none text-sm text-black focus:outline-none"
@@ -40,130 +42,62 @@
       </div>
     </div>
 
-    <div class="flex flex-row justify-between pr-8 pl-6 pt-8 pb-3">
-      <button class="text-[#152536] font-bold text-xl">Results for "fgfghg" </button>
-      <button class="text-[#152536] font-bold text-xl">12.749 founds</button>
-    </div> 
-    
-    <div class="grid grid-cols-2 p-2 overflow-y-scroll scrollbar-hide h-screen">
-        <div>
-          <img
-            src="../../../public/assets/img/shoes/puma/puma1.jpg"
-            alt="puma"
-            class="w-48 h-48 rounded-2xl"
-          />
-          <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-          <p>$ 85.00</p>
-        </div>
-        <div>
-          <img
-            src="../../../public/assets/img/shoes/puma/puma1.jpg"
-            alt="puma"
-            class="w-48 h-48 rounded-2xl"
-          />
-          <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-          <p>$ 85.00</p>
-        </div>
-        <div>
-          <img
-            src="../../../public/assets/img/shoes/puma/puma1.jpg"
-            alt="puma"
-            class="w-48 h-48 rounded-2xl"
-          />
-          <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-          <p>$ 85.00</p>
-        </div>
-        <div>
-          <img
-            src="../../../public/assets/img/shoes/puma/puma1.jpg"
-            alt="puma"
-            class="w-48 h-48 rounded-2xl"
-          />
-          <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-          <p>$ 85.00</p>
-        </div>
-        <div>
-          <img
-            src="../../../public/assets/img/shoes/puma/puma1.jpg"
-            alt="puma"
-            class="w-48 h-48 rounded-2xl"
-          />
-          <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-          <p>$ 85.00</p>
-        </div>
-        <div>
-          <img
-            src="../../../public/assets/img/shoes/puma/puma1.jpg"
-            alt="puma"
-            class="w-48 h-48 rounded-2xl"
-          />
-          <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-          <p>$ 85.00</p>
-        </div>
-        <div>
-            <img
-              src="../../../public/assets/img/shoes/puma/puma1.jpg"
-              alt="puma"
-              class="w-48 h-48 rounded-2xl"
-            />
-            <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-            <p>$ 85.00</p>
-          </div>
-          <div>
-            <img
-              src="../../../public/assets/img/shoes/puma/puma1.jpg"
-              alt="puma"
-              class="w-48 h-48 rounded-2xl"
-            />
-            <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-            <p>$ 85.00</p>
-          </div>
-          <div>
-            <img
-              src="../../../public/assets/img/shoes/puma/puma1.jpg"
-              alt="puma"
-              class="w-48 h-48 rounded-2xl"
-            />
-            <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-            <p>$ 85.00</p>
-          </div>
-          <div>
-            <img
-              src="../../../public/assets/img/shoes/puma/puma1.jpg"
-              alt="puma"
-              class="w-48 h-48 rounded-2xl"
-            />
-            <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-            <p>$ 85.00</p>
-          </div>
-          <div>
-            <img
-              src="../../../public/assets/img/shoes/puma/puma1.jpg"
-              alt="puma"
-              class="w-48 h-48 rounded-2xl"
-            />
-            <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-            <p>$ 85.00</p>
-          </div>
-          <div>
-            <img
-              src="../../../public/assets/img/shoes/puma/puma1.jpg"
-              alt="puma"
-              class="w-48 h-48 rounded-2xl"
-            />
-            <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-            <p>$ 85.00</p>
-          </div>
-          <div>
-            <img
-              src="../../../public/assets/img/shoes/puma/puma1.jpg"
-              alt="puma"
-              class="w-48 h-48 rounded-2xl"
-            />
-            <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
-            <p>$ 85.00</p>
-          </div>
+  
 
+
+    <div id="resultHeader" class="flex flex-row justify-between pr-8 pl-6  pb-3 ">
+      <!-- <h2 class="text-[#152536] font-bold text-xl">Results for "fgfghg" </h2>
+      <h2 class="text-[#152536] font-bold text-xl">0 found</h2> -->
+    </div>
+    
+    <div id="products" class="grid grid-cols-2 p-2 overflow-y-scroll scrollbar-hide h-screen">
+        <!-- <div>
+          <img
+            src="../../../public/assets/img/shoes/puma/puma1.jpg"
+            alt="puma"
+            class="w-48 h-48 rounded-2xl"
+          />
+          <h3 class="text-[#152536] font-bold">K-Swiss istaTrainbhbhghghg...</h3>
+          <p>$ 85.00</p>
+        </div>
+        <div>
+          <img
+            src="../../../public/assets/img/shoes/puma/puma1.jpg"
+            alt="puma"
+            class="w-48 h-48 rounded-2xl"
+          />
+          <h3 class="text-[#152536] font-bold">K-Swiss ista Train...</h3>
+          <p>$ 85.00</p>
+        </div> -->
       </div>
+     
+
+
+     <!-- not found result -->
+      
+   
+    <div id="notFoundMessage" class="flex flex-col justify-center items-center pt-2">
+        <!-- <img src="../../../public/assets/img/myOrder.png" alt="myOrder" class="w-60 h-60">
+        <h2 class="text-[#152536] font-bold text-5xl">Not Found</h2>
+        <p class="text-gray-500  text-center  w-96 pt-5">Sorry,the keyword you entered cannot be found,please check again or search with another keyword.</p> -->
+    </div>
+       
+
+     <!-- search  history -->
+
+    <div id="recentContainer">
+  <div class="flex flex-row justify-between pr-8 pl-6 pt-8 pb-3">
+    <button class="text-[#152536] font-bold text-xl">Recent</button>
+    <button id="clearHistoryBtn" class="text-[#152536] font-bold text-xl">Clear All</button>
+  </div>
+  <hr class="m-6">
+  <div id="recentSearches" class="flex flex-row justify-between pr-8 pl-6 pt-5">
+    <h3 class="text-gray-500">Nike Wrapshot classic</h3>
+    <button><img src="../../../public/assets/img/Close Square.svg" alt="Close"></button>
+  </div>
+</div>
+   
+     
+      <script src="./search.js"></script>
 </body>
 </html>
