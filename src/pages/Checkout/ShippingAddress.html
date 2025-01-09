@@ -40,12 +40,76 @@
       bottom: 50%;
       transform: translate(-50%, -50%);
     }
+    .loader-backdrop {
+position: fixed; 
+top: 0;
+left: 0;
+width: 100%; 
+height: 100%; 
+background: rgba(51, 51, 51, 0.6); 
+z-index: 9999; 
+display: flex; 
+align-items: center;    
+justify-content: center; 
+}
+
+.loader {
+display: flex;    
+align-items: center; 
+justify-content: center; 
+flex-direction: row; 
+}
+
+.bar {
+display: inline-block;
+width: 10px;
+height: 20px;
+background-color: rgba(0, 0, 0, 0.8); 
+border-radius: 10px; 
+animation: scale-up4 1s linear infinite; 
+}
+
+.bar:nth-child(2) {
+height: 45px;
+margin: 0 5px;
+animation-delay: 0.25s;
+}
+
+.bar:nth-child(3) {
+animation-delay: 0.5s; 
+}
+
+@keyframes scale-up4 {
+20% {
+ background-color: #fff;
+ transform: scaleY(2.5); 
+}
+40% {
+ transform: scaleY(2); 
+}
+}
+
+.hidden {
+   display: none;
+ }
   </style>
   <body>
+   
+          <!-- is loading -->
+<div
+class="hidden loader-backdrop"
+id="loading-backdrop"
+>
+<div class="loader" id="loading-spinner">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</div>
+</div>
   <div class="bg-gray-100 h-screen">
 
     <div class="flex flex-row pt-10 pl-4 gap-3">
-        <img src="../../../public/assets/img/arrow-left-short.png" alt="arrow" />
+        <img src="../../../public/assets/img/arrow-left-short.png" alt="arrow" id="back-arrow" />
         <h3 class="font-bold text-2xl text-[#152536]">Shipping Address</h3>
       </div>
       <div class="w-full flex flex-col gap-5 pt-14 pl-5 pr-5">

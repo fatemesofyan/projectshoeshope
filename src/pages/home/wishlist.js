@@ -4,7 +4,7 @@ const API_KEY =
 const API_BASE_URL = "http://api.alikooshesh.ir:3000";
 
 const ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjI1MDczNiwiZXhwIjoxNzM2NDIzNTM2fQ.3oEeD9x7L5b5xwx28-kWmbSg3GNNWKw_D_G8XWSafbs";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjMyNTc3NCwiZXhwIjoxNzM2NDk4NTc0fQ.EQn1qizjiiu7VsLlLb2B0GdgBeJe8oVffpCqjGizMVs";
 
 
 
@@ -71,14 +71,20 @@ const ACCESS_TOKEN =
   
       products.forEach((product) => {
         wishlistContainer.innerHTML += `
-          <div class="pb-4">
+          <div class="pb-4 ">
+          <div class="relative">
             <img
               src="${product.imageURL[0] || product.imageURL}" 
               alt="${product.name}" 
               class="w-48 h-48 rounded-2xl"
             />
+<div class="absolute top-4 right-6">
+          <img src="../../../public/assets/img/wishlist-like-svgrepo-com (1).svg" alt="wishlist-like" class="w-8 h-8">
+        </div>
+        </div>
             <h3 class="text-[#152536] font-bold">${product.name}</h3>
             <p>$ ${product.price}</p>
+
           </div>`;
       });
     } catch (error) {

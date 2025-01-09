@@ -29,7 +29,6 @@
       border: none;
       background: none;
       font-size: 22px;
-      /* font-weight: bold; */
       position: relative;
       color: #666;
     }
@@ -73,16 +72,16 @@
     }
 
     .icon .svg-icon {
-      transition: fill 0.3s ease; /* انیمیشن تغییر رنگ */
+      transition: fill 0.3s ease; 
     }
 
     .icon:hover .svg-icon path {
-      fill: #ffffff; /* تغییر رنگ به سفید */
+      fill: #ffffff; 
     }
   </style>
   <body>
     <div
-      class="w-full flex flex-col justify-between fixed top-0 z-10 pt-3 pr-4"
+      class="w-full flex flex-col justify-between fixed bg-white top-0 z-10 pt-3 pr-4"
     >
       <div class="w-full flex flex-row justify-between">
         <div class="flex flex-row justify-center pt-10 pl-4 gap-3">
@@ -117,18 +116,18 @@
 
       <div class="tabs-container">
         <div class="tabs">
-          <button class="tab active">Active</button>
-          <button class="tab">Completed</button>
+          <button onclick="handleActiveTabClick()" class="tab active">Active</button>
+          <button onclick="handleCompletedTabClick()" class="tab">Completed</button>
         </div>
         <div class="general-line"></div>
       </div>
     </div>
 
     <div>
-      <div
+      <div id="cart-container"
         class="pt-40 pl-5 pr-5 flex flex-col gap-3 overflow-y-scroll scrollbar-hide"
       >
-        <div
+        <!-- <div
           class="flex gap-2 rounded-3xl w-full max-h-40 shadow-md bg-white p-5"
         >
           <div class="bg-[#F3F3F3] rounded-3xl w-28 p-3">
@@ -140,8 +139,8 @@
           </div>
           <div class="flex flex-col gap-1">
             <div class="flex flex-row gap-8 justify-between">
-              <h2 class="text-[#152536] font-bold text-base">
-                Running Sportwear
+              <h2 class="text-[#152536] font-bold text-base text-ellipsis">
+                Running Sportwear kgkghghjgjguhgkjgjkghj
               </h2>
             </div>
             <div>
@@ -164,9 +163,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div
+        <!-- <div
           class="flex gap-2 rounded-3xl w-full max-h-40 shadow-md bg-white p-5"
         >
           <div class="bg-[#F3F3F3] rounded-3xl w-28 p-3">
@@ -175,8 +174,8 @@
               alt="puma"
               class="w-20 h-20"
             />
-          </div>
-          <div class="flex flex-col gap-1">
+          </div> -->
+          <!-- <div class="flex flex-col gap-1">
             <div class="flex flex-row gap-8 justify-between">
               <h2 class="text-[#152536] font-bold text-base">
                 Running Sportwear
@@ -201,7 +200,7 @@
                 </button>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -234,12 +233,12 @@
             
             <span>Orders</span>
           </button>
-          <button class="flex flex-col">
+          <button class="flex flex-col" onclick="chengwalletImg(this)">
             <img src="../../../public/assets/img/action Bar/images/wallet.svg" alt="wallet" class="w-8 h-8">
             <!-- <img src="../../../public/assets/img/action Bar/images/wallet-fill.svg" alt="wallet" > -->
             <span>Wallet</span>
           </button>
-          <button class="flex flex-col">
+          <button class="flex flex-col " onclick="pofileChengimg(this)">
             <img src="../../../public/assets/img/action Bar/images/person.svg" alt="Profile" class="w-8 h-8" >
             <!-- <img src="../../../public/assets/img/action Bar/images/person-fill.svg" alt="Profile"> -->
 
@@ -257,21 +256,8 @@
           tab.classList.add("active");
         });
       });
-      
-  function changeImageAndRedirect(button) {
-   
-    const imgElement = button.querySelector("img");
-    imgElement.src = "../../../public/assets/img/action Bar/images/house-door-fill.svg";
-    window.location.href = "../../pages/home/home.html";
-   
-  }
-  function changeCartImage(button) {
-    
-    const imgElement = button.querySelector("img");
-    imgElement.src = "../../../public/assets/img/action Bar/images/handbag-fill.svg";
-    window.location.href = "../../pages/Cart/mycart.html";
-  }
-
+</script>
+    <script src="./Activecart.js">
   
     </script>
   </body>

@@ -7,9 +7,6 @@
     src: url('/public/assets/Font/inter/InterDisplay-SemiBold.otf') format('woff2'),
          url('/public/assets/Font/inter/InterDisplay-Regular.otf') format('woff'),
          url('/public/assets/Font/inter/Inter-Bold.otf') format('woff');
-
-    font-weight: normal;
-    font-style: normal;
   } */
 
 input[type="checkbox"] {

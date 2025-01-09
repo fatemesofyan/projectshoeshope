@@ -13,28 +13,27 @@ const API_KEY =
 const API_BASE_URL = "http://api.alikooshesh.ir:3000";
 
 const ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjI1MDczNiwiZXhwIjoxNzM2NDIzNTM2fQ.3oEeD9x7L5b5xwx28-kWmbSg3GNNWKw_D_G8XWSafbs";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjMyNTc3NCwiZXhwIjoxNzM2NDk4NTc0fQ.EQn1qizjiiu7VsLlLb2B0GdgBeJe8oVffpCqjGizMVs";
 
-// ذخیره جستجو در تاریخچه
 function saveSearchHistory(query) {
   let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
   if (!history.includes(query)) {
-    history.unshift(query); // اضافه کردن جستجو به ابتدای لیست
-    if (history.length > 10) history.pop(); // محدود کردن به 10 جستجو
+    history.unshift(query);
+    if (history.length > 10) history.pop();
     localStorage.setItem("searchHistory", JSON.stringify(history));
   }
 }
 
-// بازیابی تاریخچه و نمایش آن
 function renderHistory() {
   const recentContainer = document.getElementById("recentSearches");
   const clearButton = document.getElementById("clearHistoryBtn");
   const history = JSON.parse(localStorage.getItem("searchHistory")) || [];
 
   if (history.length === 0) {
-    recentContainer.innerHTML = "<p class='text-gray-500 text-center'>No recent searches</p>";
-    recentContainer.style.display = "block"; // نمایش بلوک برای وضعیت خالی
-    clearButton.style.display = "none"; // مخفی کردن دکمه Clear All
+    recentContainer.innerHTML =
+      "<p class='text-gray-500 text-center'>No recent searches</p>";
+    recentContainer.style.display = "block";
+    clearButton.style.display = "none";
     return;
   }
 
@@ -50,11 +49,10 @@ function renderHistory() {
       `
     )
     .join("");
-  recentContainer.style.display = "block"; // نمایش هیستوری
-  clearButton.style.display = "block"; // نمایش دکمه Clear All
+  recentContainer.style.display = "block";
+  clearButton.style.display = "block";
 }
 
-// حذف یک جستجو از تاریخچه
 function removeFromHistory(query) {
   let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
   history = history.filter((item) => item !== query);
@@ -62,13 +60,11 @@ function removeFromHistory(query) {
   renderHistory();
 }
 
-// پاک کردن کل تاریخچه
 function clearHistory() {
   localStorage.removeItem("searchHistory");
   renderHistory();
 }
 
-// جستجوی محصولات
 async function searchProducts(query) {
   try {
     if (!query || query.trim() === "") {
@@ -76,9 +72,8 @@ async function searchProducts(query) {
       return;
     }
 
-    saveSearchHistory(query); // ذخیره جستجو در تاریخچه
+    saveSearchHistory(query);
 
-    // مخفی کردن Recent Searches و Clear All
     document.getElementById("recentSearches").style.display = "none";
     document.getElementById("clearHistoryBtn").style.display = "none";
 
@@ -108,7 +103,7 @@ async function searchProducts(query) {
 
     if (!result.records || result.records.length === 0) {
       console.warn("No products found for the given query.");
-      productsContainer.style.display = "none"; // مخفی کردن بخش محصولات
+      productsContainer.style.display = "none";
       productsContainer.innerHTML = "";
       notFoundMessage.innerHTML = `
         <img src="../../../public/assets/img/myOrder.png" alt="myOrder" class="w-60 h-60">
@@ -120,14 +115,13 @@ async function searchProducts(query) {
 
     renderProduct(result.records);
     notFoundMessage.innerHTML = "";
-    productsContainer.style.display = "block"; // نمایش محصولات
+    productsContainer.style.display = "block";
   } catch (error) {
     console.error(`Error: ${error.message}`);
     productsContainer.innerHTML = "<p>Error products.</p>";
   }
 }
 
-// نمایش محصولات
 function renderProduct(products) {
   console.log(products);
   productsContainer.innerHTML = products
@@ -149,17 +143,16 @@ function renderProduct(products) {
   }, 0);
 }
 
-// رویدادها
 searchButton.addEventListener("click", () => {
   const query = searchInput.value.trim();
   searchProducts(query);
 });
 
-document.getElementById("clearHistoryBtn").addEventListener("click", clearHistory);
+document
+  .getElementById("clearHistoryBtn")
+  .addEventListener("click", clearHistory);
 
-// نمایش تاریخچه هنگام بارگذاری صفحه
 document.addEventListener("DOMContentLoaded", renderHistory);
 document.getElementById("recentSearches").style.display = "none";
 document.getElementById("clearHistoryBtn").style.display = "none";
 productsContainer.style.display = "none";
-

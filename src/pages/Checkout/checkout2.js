@@ -1,7 +1,7 @@
 const checkoutContainer = document.getElementById("checkout-container"); 
 const checkoutTotalPrice = document.getElementById("checkout-total"); 
 const continuePayment = document.getElementById("Payment");
-const totalPriceElement = document.getElementById("totalPrice"); // اصلاح نام متغیر
+const totalPriceElement = document.getElementById("totalPrice"); 
 const promoElement = document.getElementById("promo");
 
 const API_KEY =
@@ -10,7 +10,7 @@ const API_KEY =
 const API_BASE_URL = "http://api.alikooshesh.ir:3000";
 
 const ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjI1MDczNiwiZXhwIjoxNzM2NDIzNTM2fQ.3oEeD9x7L5b5xwx28-kWmbSg3GNNWKw_D_G8XWSafbs";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjQyNTAxNCwiZXhwIjoxNzM2NTk3ODE0fQ.kL2mQwFIM1tGyH8IfJPkljontvYP9eQH2at0fv7Lq_g";
 
 async function fetchCartItems() {
   try {
@@ -40,8 +40,8 @@ function renderCheckoutItems(cartItems) {
   if (cartItems.length === 0) {
     checkoutContainer.innerHTML = `<p>Your cart is empty.</p>`;
     checkoutTotalPrice.innerHTML = "<p> $0.00</p>";
-    totalPriceElement.innerHTML = "$0.00"; // به‌روزرسانی مبلغ نهایی
-    promoElement.innerHTML = "$0.00"; // به‌روزرسانی مقدار تخفیف
+    totalPriceElement.innerHTML = "$0.00"; 
+    promoElement.innerHTML = "$0.00"; 
     return;
   }
 
@@ -70,21 +70,33 @@ function renderCheckoutItems(cartItems) {
     `;
   });
 
-  // محاسبه مبلغ نهایی با هزینه شیپینگ و تخفیف
-  const shippingCost = 15.0; // هزینه ثابت شیپینگ
-  const discount = (totalCartPrice + shippingCost) * 0.3; // محاسبه تخفیف
-  const discountedTotal = totalCartPrice + shippingCost - discount; // مبلغ نهایی بعد از تخفیف
+  const shippingCost = 15.0; 
+  const discount = (totalCartPrice + shippingCost) * 0.3; 
+  const discountedTotal = totalCartPrice + shippingCost - discount; 
 
-  // به‌روزرسانی قیمت‌ها در UI
   checkoutTotalPrice.innerHTML = `<p class="font-bold text-lg text-[#152536]"> $${totalCartPrice.toFixed(2)}</p>`;
-  promoElement.innerHTML = `-$${discount.toFixed(2)}`; // نمایش مقدار تخفیف
-  totalPriceElement.innerHTML = `$${discountedTotal.toFixed(2)}`; // نمایش مبلغ نهایی
+  promoElement.innerHTML = `-$${discount.toFixed(2)}`; 
+  totalPriceElement.innerHTML = `$${discountedTotal.toFixed(2)}`; 
 }
 
-// Fetch cart items when the page loads
 fetchCartItems();
 
-// Event listener for payment
 continuePayment.addEventListener("click", () => {
   window.location.href = "./PaymentMethods.html";
+});
+
+
+const backArrow = document.getElementById("back-arrow");
+const backdrop = document.getElementById("loading-backdrop");
+
+backArrow.addEventListener("click", () => {
+  backdrop.classList.remove("hidden");
+
+  setTimeout(() => {
+    window.location.href ="../Checkout/ChooseShipping.html"  ;
+  }, 2000); 
+
+  setTimeout(() => {
+    backdrop.classList.add("hidden");
+  }, 2500); 
 });

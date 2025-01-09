@@ -4,7 +4,7 @@ const API_KEY =
 const API_BASE_URL = "http://api.alikooshesh.ir:3000";
 
 const ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjI1MDczNiwiZXhwIjoxNzM2NDIzNTM2fQ.3oEeD9x7L5b5xwx28-kWmbSg3GNNWKw_D_G8XWSafbs";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjQyNTAxNCwiZXhwIjoxNzM2NTk3ODE0fQ.kL2mQwFIM1tGyH8IfJPkljontvYP9eQH2at0fv7Lq_g";
 
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get("id");
@@ -138,24 +138,22 @@ const addToCartButton = document.getElementById("addtoCart");
 let selectedSize = null;
 let selectedColor = null;
 
-// مدیریت انتخاب سایز
 document.getElementById("product-details").addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON" && event.target.textContent.trim()) {
     const sizeButtons = document.querySelectorAll("#product-details button");
     sizeButtons.forEach((btn) => btn.classList.remove("bg-[#152536]", "text-white"));
     event.target.classList.add("bg-[#152536]", "text-white");
-    selectedSize = event.target.textContent.trim(); // ذخیره سایز انتخاب‌شده
+    selectedSize = event.target.textContent.trim(); 
     console.log("Selected Size:", selectedSize);
   }
 });
 
-// مدیریت انتخاب رنگ
 document.getElementById("product-details").addEventListener("click", (event) => {
   if (event.target.tagName === "BUTTON" && event.target.style.backgroundColor) {
     const colorButtons = document.querySelectorAll("#product-details button");
     colorButtons.forEach((btn) => btn.style.outline = "");
-    event.target.style.outline = "3px solid black"; // نشان دادن رنگ انتخاب‌شده
-    selectedColor = event.target.style.backgroundColor; // ذخیره رنگ انتخاب‌شده
+    event.target.style.outline = "3px solid black"; 
+    selectedColor = event.target.style.backgroundColor; 
     console.log("Selected Color:", selectedColor);
   }
 });
@@ -189,10 +187,10 @@ addToCartButton.addEventListener("click", async () => {
       product_id: product.id,
       name: product.name,
       imageURL: product.imageURL[0],
-      price: product.price,  // Only send the unit price
-      quantity: quantity,    // Send the quantity as well
-      size: selectedSize,    // اضافه کردن سایز انتخاب‌شده
-      color: selectedColor,  // اضافه کردن رنگ انتخاب‌شده
+      price: product.price,  
+      quantity: quantity,    
+      size: selectedSize,    
+      color: selectedColor,  
     };
 
     const cartResponse = await fetch(`${API_BASE_URL}/api/records/carts`, {
@@ -327,7 +325,7 @@ async function toggleLike(button) {
     console.log(isAdded + "ooooooooooooooooooo");
     if (isAdded) {
       await removeFromWishlist(isAdded.id); 
-      heartImage.src = "https://example.com/assets/img/heart (1).png"; 
+      heartImage.src ="../../../public/assets/img/heart (1).png"; 
       button.dataset.added = "false";
       console.log("Product removed from wishlist");
     } else {
@@ -366,9 +364,3 @@ backArrow.addEventListener("click", () => {
 
 
 
-// function toggleLike(button) {
-   
-//   const imgElement = button.querySelector("img");
-//   imgElement.src = "../../../public/assets/img/like-svgrepo-com.svg";
- 
-// }

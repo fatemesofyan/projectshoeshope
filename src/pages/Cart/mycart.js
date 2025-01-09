@@ -1,4 +1,4 @@
-const addToCartButton = document.getElementById('addtoCheckout');
+// const addToCartButton = document.getElementById('addtoCheckout');
 const modal = document.getElementById('modal');
 const cancelButton = document.getElementById("cancelBtn");
 const confirmButton = document.getElementById("confirmBtn");
@@ -13,7 +13,7 @@ const API_KEY =
 const API_BASE_URL = "http://api.alikooshesh.ir:3000";
 
 const ACCESS_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjI1MDczNiwiZXhwIjoxNzM2NDIzNTM2fQ.3oEeD9x7L5b5xwx28-kWmbSg3GNNWKw_D_G8XWSafbs";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzkwZTNmZDU4ZmE5NDQ1ZTZhOThiMCIsImlhdCI6MTczNjMyNTc3NCwiZXhwIjoxNzM2NDk4NTc0fQ.EQn1qizjiiu7VsLlLb2B0GdgBeJe8oVffpCqjGizMVs";
 
   
 
@@ -45,7 +45,15 @@ const ACCESS_TOKEN =
     let totalCartPrice = 0;
   
     if (cartItems.length === 0) {
-      cartContainer.innerHTML = `<p class="text-[#152536] font-bold text-base">Your cart is empty.</p>`;
+      cartContainer.innerHTML = ` <div class="w-full h-screen bg-white flex flex-col justify-center items-center ">
+      <img
+        src="../../../public/assets/img/myOrder.png"
+        alt="myOrder"
+        class="w-60 h-60"
+      />
+      <h2 class="text-[#152536] font-bold text-2xl">Your cart is empty</h2>
+      
+    </div>`;
       document.querySelector(".font-bold.text-2xl").textContent = "$ 0.00";
       return;
     }
@@ -61,7 +69,7 @@ const ACCESS_TOKEN =
         </div>
         <div class="flex flex-col w-full">
           <div class="flex flex-row gap-8 justify-between items-center">
-            <h2 id="name-${item.id}" class="text-[#152536] font-bold text-base">
+            <h2 id="name-${item.id}" class="text-[#152536] font-bold text-base ">
               ${item.name}
             </h2>
             <img
@@ -220,14 +228,73 @@ fetchCartItems();
     confirmRemoveItem(); 
   });
   
-addToCartButton.addEventListener('click', () => {
-  modal.classList.remove('hidden');
-});
+
 
 cancelButton.addEventListener('click', () => {
   modal.classList.add('hidden');
 });
-
+console.log(cancelButton);
 checkoutButton.addEventListener('click', () => {
+  
   window.location.href ="../Checkout/checkout1.html";
 });
+
+
+
+function changeCartImage(button) {
+  console.log(button);
+  const imgElement = button.querySelector("img");
+  imgElement.src = "../../../public/assets/img/action Bar/images/cart-fill.svg";
+  window.location.href = "../orders/Activecart.html";
+}
+
+
+function changeImageAndRedirect(button) {
+
+  const imgElement = button.querySelector("img");
+  imgElement.src = "../../../public/assets/img/action Bar/images/house-door-fill.svg";
+  window.location.href = "../../pages/home/home.html";
+  
+  }
+
+
+  function changeCartImage(button) {
+    
+    const imgElement = button.querySelector("img");
+    imgElement.src = "../../../public/assets/img/action Bar/images/cart-fill.svg";
+    window.location.href = "../orders/Activecart.html";
+  }
+  
+  
+  
+  
+  
+  function chengwalletImg(button) {
+      
+    const imgElement = button.querySelector("img");
+    imgElement.src ="../../../public/assets/img/action Bar/images/wallet-fill.svg";
+    window.location.href ="../Checkout/checkout1.html";
+  }
+  
+  function pofileChengimg(button) {
+      
+    const imgElement = button.querySelector("img");
+    imgElement.src ="../../../public/assets/img/action Bar/images/person-fill.svg" ;
+    window.location.href ="../profile/profile.html";
+  }
+
+  function chengwalletImg(button) {
+    
+    const imgElement = button.querySelector("img");
+    imgElement.src ="../../../public/assets/img/action Bar/images/wallet-fill.svg";
+    window.location.href ="../Checkout/checkout1.html";
+  }
+  
+  function pofileChengimg(button) {
+      
+    const imgElement = button.querySelector("img");
+    imgElement.src ="../../../public/assets/img/action Bar/images/person-fill.svg" ;
+    window.location.href ="../profile/profile.html";
+  }
+
+

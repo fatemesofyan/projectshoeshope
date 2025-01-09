@@ -12,7 +12,7 @@
       height: 24px;
       border: 2px solid #ccc;
       border-radius: 50%;
-      appearance: none; 
+      appearance: none;
       outline: none;
       cursor: pointer;
       transition: background-color 0.3s, border-color 0.3s;
@@ -20,8 +20,8 @@
     }
 
     input[type="radio"]:checked {
-      background-color: white; 
-      border-color: black; 
+      background-color: white;
+      border-color: black;
       border: 2px solid;
     }
 
@@ -30,36 +30,110 @@
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background-color: black; 
+      background-color: black;
       display: block;
-      margin: 4px; 
-      position: absolute; 
-      top: 30%; 
-      left: 30%; 
+      margin: 4px;
+      position: absolute;
+      top: 30%;
+      left: 30%;
       right: 40%;
       bottom: 50%;
       transform: translate(-50%, -50%);
     }
+    .loader-backdrop {
+position: fixed; 
+top: 0;
+left: 0;
+width: 100%; 
+height: 100%; 
+background: rgba(51, 51, 51, 0.6); 
+z-index: 9999; 
+display: flex; 
+align-items: center;    
+justify-content: center; 
+}
+
+.loader {
+display: flex;    
+align-items: center; 
+justify-content: center; 
+flex-direction: row; 
+}
+
+.bar {
+display: inline-block;
+width: 10px;
+height: 20px;
+background-color: rgba(0, 0, 0, 0.8); 
+border-radius: 10px; 
+animation: scale-up4 1s linear infinite; 
+}
+
+.bar:nth-child(2) {
+height: 45px;
+margin: 0 5px;
+animation-delay: 0.25s;
+}
+
+.bar:nth-child(3) {
+animation-delay: 0.5s; 
+}
+
+@keyframes scale-up4 {
+20% {
+ background-color: #fff;
+ transform: scaleY(2.5); 
+}
+40% {
+ transform: scaleY(2); 
+}
+}
+
+.hidden {
+   display: none;
+ }
   </style>
   <body>
-    <div class="bg-gray-100 h-screen ">
-      <div class="flex flex-row justify-between pt-10 pr-4 ">
-        <div class="flex flex-row  pt-10 pl-4 gap-3">
+    <!-- is loading -->
+    <div class="hidden loader-backdrop" id="loading-backdrop">
+      <div class="loader" id="loading-spinner">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+    <div class="bg-gray-100 h-screen">
+      <div class="flex flex-row justify-between pt-10 pr-4">
+        <div class="flex flex-row pt-10 pl-4 gap-3">
           <img
-          src="../../../public/assets/img/arrow-left-short.png"
-          alt="arrow"
-        />
-        <h3 class="font-bold text-2xl text-[#152536]">Payment Methods</h3>
+            src="../../../public/assets/img/arrow-left-short.png"
+            alt="arrow"
+            id="back-arrow"
+          />
+          <h3 class="font-bold text-2xl text-[#152536]">Payment Methods</h3>
         </div>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle w-8 h-8 mt-10" viewBox="0 0 16 16">
-          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-plus-circle w-8 h-8 mt-10"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+          />
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+          />
         </svg>
       </div>
 
       <div>
-        <p class="text-gray-500 pl-6 pt-10">Select the payment method you want to use.</p>
+        <p class="text-gray-500 pl-6 pt-10">
+          Select the payment method you want to use.
+        </p>
       </div>
 
       <div class="w-full flex flex-col gap-5 pt-14 pl-5 pr-5">
@@ -74,7 +148,6 @@
             />
             <div class="flex flex-col">
               <h1 class="font-bold text-xl text-[#152536]">My Wallet</h1>
-              
             </div>
           </div>
           <div class="flex items-center">
@@ -93,7 +166,6 @@
             />
             <div class="flex flex-col">
               <h1 class="font-bold text-xl text-[#152536]">PayPal</h1>
-             
             </div>
           </div>
           <div class="flex items-center">
@@ -112,7 +184,6 @@
             />
             <div class="flex flex-col">
               <h1 class="font-bold text-xl text-[#152536]">Google Pay</h1>
-              
             </div>
           </div>
           <div class="flex items-center">
@@ -131,7 +202,6 @@
             />
             <div class="flex flex-col">
               <h1 class="font-bold text-xl text-[#152536]">Apple Pay</h1>
-             
             </div>
           </div>
           <div class="flex items-center">
@@ -149,8 +219,9 @@
               class="w-10 h-10"
             />
             <div class="flex flex-col">
-              <h1 class="font-bold text-xl text-[#152536]">... ... ... ... 4679</h1>
-              
+              <h1 class="font-bold text-xl text-[#152536]">
+                ... ... ... ... 4679
+              </h1>
             </div>
           </div>
           <div class="flex items-center">
@@ -161,11 +232,12 @@
       </div>
 
       <div class="pl-5 pr-5 pt-2">
-        <button id="Payment"
+        <button
+          id="Payment"
           type="submit"
           class="bg-slate-950 rounded-3xl text-white w-full h-12 mt-40 mb-5"
         >
-        Confirm Payment
+          Confirm Payment
         </button>
       </div>
     </div>

@@ -387,6 +387,16 @@ function changeCart(button) {
   window.location.href = "../../pages/Cart/mycart.html";
 }
 
+function chengwalletImg(button) {
+    
+  const imgElement = button.querySelector("img");
+  imgElement.src ="../../../public/assets/img/action Bar/images/wallet-fill.svg";
+  window.location.href ="../Checkout/checkout1.html";
+}
 
-
-
+function pofileChengimg(button) {
+    
+  const imgElement = button.querySelector("img");
+  imgElement.src ="../../../public/assets/img/action Bar/images/person-fill.svg" ;
+  window.location.href ="../profile/profile.html";
+}
