@@ -180,7 +180,6 @@ id="loading-backdrop"
 
     <script src="./loginscript.js" type="module"></script>
     <script>
-      // Function to handle input changes and button opacity
       function handleInput(buttonId, submitId) {
         const emailInput = document.getElementById("emailInput");
         const passwordInput = document.getElementById("passwordInput");
@@ -192,12 +191,10 @@ id="loading-backdrop"
         const emailFilled = emailInput.value.trim().length > 0;
         const passwordFilled = passwordInput.value.trim().length > 0;
 
-        // Toggle button opacity
         emailButton.style.opacity = emailFilled ? "1" : "0.5";
         passwordButton.style.opacity = passwordFilled ? "1" : "0.5";
         eyeButton.style.opacity = passwordFilled ? "1" : "0.5";
 
-        // Toggle submit button state
         if (emailFilled && passwordFilled) {
           submitButton.style.opacity = "1";
           submitButton.disabled = false;
@@ -207,17 +204,16 @@ id="loading-backdrop"
         }
       }
 
-      // Function to toggle password visibility
       function togglePasswordVisibility() {
         const passwordInput = document.getElementById("passwordInput");
         const eyeIcon = document.getElementById("eyeIcon");
 
         if (passwordInput.type === "password") {
-          passwordInput.type = "text"; // Show the password
-          eyeIcon.src = "../../../public/assets/img/Show.svg"; // Change the icon
+          passwordInput.type = "text"; 
+          eyeIcon.src = "../../../public/assets/img/Show.svg"; 
         } else {
-          passwordInput.type = "password"; // Hide the password
-          eyeIcon.src = "../../../public/assets/img/eye-slash-fill.png"; // Change the icon back
+          passwordInput.type = "password"; 
+          eyeIcon.src = "../../../public/assets/img/eye-slash-fill.png"; 
         }
       }
     </script>
