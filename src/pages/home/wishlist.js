@@ -71,7 +71,7 @@ const ACCESS_TOKEN =
   
       products.forEach((product) => {
         wishlistContainer.innerHTML += `
-          <div class="pb-4 ">
+         <a href="../home/homepagesingelprodact.html?id=${product.id}"><div class="pb-4 ">
           <div class="relative">
             <img
               src="${product.imageURL[0] || product.imageURL}" 
@@ -85,7 +85,7 @@ const ACCESS_TOKEN =
             <h3 class="text-[#152536] font-bold">${product.name}</h3>
             <p>$ ${product.price}</p>
 
-          </div>`;
+          </div></a>`;
       });
     } catch (error) {
       console.error("Error rendering products:", error.message);
